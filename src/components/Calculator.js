@@ -1,7 +1,7 @@
 import React from 'react';
 import './Calculator.css';
-// eslint-disable-next-line react/prefer-stateless-function
-class Calculator extends React.Component {
+
+class Calculator extends React.PureComponent {
   render() {
     const list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'AC', '+/-', '%', '÷', '.', 'x', '+', '-', '='];
 
