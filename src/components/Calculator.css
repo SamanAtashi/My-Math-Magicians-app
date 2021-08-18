@@ -1,0 +1,134 @@
+li {
+  list-style: none;
+}
+
+ul {
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+
+  /* justify-content: flex-end; */
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: greenyellow;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-result {
+  width: 100%;
+  background-color: grey;
+  color: white;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+}
+
+.calc-item {
+  width: 25%;
+}
+
+.calc-zero {
+  justify-self: start;
+  width: 50%;
+}
+
+.o-0 {
+  order: 0;
+}
+
+.o-1 {
+  order: 14;
+}
+
+.o-2 {
+  order: 15;
+}
+
+.o-3 {
+  order: 16;
+}
+
+.o-4 {
+  order: 10;
+}
+
+.o-5 {
+  order: 11;
+}
+
+.o-6 {
+  order: 12;
+}
+
+.o-7 {
+  order: 5;
+}
+
+.o-8 {
+  order: 6;
+}
+
+.o-9 {
+  order: 7;
+}
+
+.o-10 {
+  order: 1;
+}
+
+.o-11 {
+  order: 2;
+}
+
+.o-12 {
+  order: 3;
+}
+
+.o-13 {
+  order: 4;
+  background-color: tomato;
+}
+
+.o-14 {
+  order: 19;
+}
+
+.o-15 {
+  order: 9;
+  background-color: tomato;
+}
+
+.o-16 {
+  order: 17;
+  background-color: tomato;
+}
+
+.o-17 {
+  order: 13;
+  background-color: tomato;
+}
+
+.o-18 {
+  order: 20;
+  background-color: tomato;
+}
+
+.o-19 {
+  order: 18;
+}
