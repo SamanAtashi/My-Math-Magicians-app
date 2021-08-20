@@ -43,11 +43,6 @@ button:hover {
   width: 25%;
 }
 
-.calc-zero {
-  justify-self: start;
-  width: 50%;
-}
-
 .o-0 {
   order: 0;
 }
@@ -131,4 +126,6 @@ button:hover {
 
 .o-19 {
   order: 18;
+  justify-self: start;
+  width: 50%;
 }
