@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line import/no-named-as-default
 import Calculator from './components/Calculator';
 import './App.css';
 

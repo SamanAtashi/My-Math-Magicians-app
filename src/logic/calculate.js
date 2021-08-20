@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 import operate from './operate';
 
 function isNumber(item) {
@@ -51,6 +52,7 @@ export default function calculate(obj, buttonName) {
       if (obj.next.includes('.')) {
         return {};
       }
+      // eslint-disable-next-line prefer-template
       return { next: obj.next + '.' };
     }
     if (obj.operation) {
@@ -60,6 +62,7 @@ export default function calculate(obj, buttonName) {
       if (obj.total.includes('.')) {
         return {};
       }
+      // eslint-disable-next-line prefer-template
       return { total: obj.total + '.' };
     }
     return { total: '0.' };
