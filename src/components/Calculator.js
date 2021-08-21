@@ -1,83 +1,69 @@
-/* eslint-disable react/no-access-state-in-setstate */
-/* eslint-disable react/destructuring-assignment */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Calculate from '../logic/calculate';
 import './Calculator.css';
 
-class Calculator extends Component {
-  constructor() {
-    super();
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-      display: 0,
-    };
-  }
+const Calculator = () => {
+  const [state, upState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+    display: 0,
+  });
 
-    calcButton = (e) => {
-      const btnName = e.target.innerHTML;
-      const { total, next, operation } = Calculate(this.state, btnName);
-      if (btnName === 'AC') {
-        this.setState({
-          display: 0, total, next, operation,
-        });
-      } else if (btnName === '=') {
-        this.setState({
-          display: total, total, next, operation,
-        });
-      } else if (btnName === '+/-') {
-        this.setState({
-          display: next || total, total, next, operation,
-        });
-      } else {
-        this.setState({
-          display: btnName, ...Calculate(this.state, btnName),
-        });
-      }
+  const calcButton = (e) => {
+    const btnName = e.target.innerHTML;
+    const { total, next } = Calculate(state, btnName);
+
+    if (btnName === 'AC') {
+      upState({ ...state, display: 0, ...Calculate(state, btnName) });
+    } else if (btnName === '=') {
+      upState({ ...state, display: total, ...Calculate(state, btnName) });
+    } else if (btnName === '+/-') {
+      upState({ ...state, display: next || total, ...Calculate(state, btnName) });
+    } else {
+      // eslint-disable-next-line max-len
+      upState((curr) => ({ ...state, display: (curr.total || '') + (curr.operation || '') + btnName, ...Calculate(state, btnName) }));
     }
+  };
 
-    render() {
-      const list = [
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
-        '9',
-        'AC',
-        '+/-',
-        '%',
-        '÷',
-        '.',
-        'x',
-        '+',
-        '-',
-        '=',
-        '0',
-      ];
+  const list = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'AC',
+    '+/-',
+    '%',
+    '÷',
+    '.',
+    'x',
+    '+',
+    '-',
+    '=',
+    '0',
+  ];
 
-      const listItem = list.map((item, index) => (
-        <li
-          key={item.toString()}
-          className={`calc-item o-${index + 1}`}
-        >
-          <button type="button" onClick={this.calcButton}>
-            {item}
-          </button>
-        </li>
-      ));
+  const listItem = list.map((item, index) => (
+    <li
+      key={item.toString()}
+      className={`calc-item o-${index + 1}`}
+    >
+      <button type="button" onClick={calcButton}>
+        {item}
+      </button>
+    </li>
+  ));
 
-      return (
-        <ul className="d-flex">
-          <li className="calc-result d-flex o-0">{this.state.display}</li>
-          {listItem}
-        </ul>
-      );
-    }
-}
-
+  return (
+    <ul className="d-flex">
+      <li className="calc-result d-flex o-0">{state.display}</li>
+      {listItem}
+    </ul>
+  );
+};
 export default Calculator;
