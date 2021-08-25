@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-// eslint-disable-next-line import/no-named-as-default
+import React from 'react';
 import Calculator from './components/Calculator';
 import './App.css';
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Calculator />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Calculator />
+  </div>
+);
 
 export default App;
