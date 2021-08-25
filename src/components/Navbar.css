@@ -1,0 +1,25 @@
+h1 {
+  font-size: 2rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a:hover {
+  color: tomato;
+}
+
+.active-link {
+  text-decoration: underline;
+  color: tomato;
+}
+
+.links {
+  display: flex;
+  padding: 0 1rem;
+  font-size: 1.3rem;
+}

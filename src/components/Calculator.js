@@ -60,7 +60,7 @@ const Calculator = () => {
   ));
 
   return (
-    <ul className="d-flex">
+    <ul className="d-flex calc">
       <li className="calc-result d-flex o-0">{state.display}</li>
       {listItem}
     </ul>
