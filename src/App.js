@@ -16,13 +16,14 @@ const App = () => (
     <Switch>
       <Route path="/calculator">
         <div className="App">
+          <h2>Let&apos;s do some Calculation!</h2>
           <Calculator />
         </div>
       </Route>
       <Route path="/quote">
         <Quote />
       </Route>
-      <Route path="/">
+      <Route exact path="/">
         <Home />
       </Route>
     </Switch>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   const links = [
@@ -21,17 +22,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav>
-      {links.map((link) => (
-        <li key={link.id}>
-          <NavLink
-            to={link.path}
-            activeClassName="active-link"
-          >
-            {link.text}
-          </NavLink>
-        </li>
-      ))}
+    <nav className="header">
+      <h1>Math Magicians</h1>
+      <ul className="d-flex">
+        {links.map((link) => (
+          <li key={link.id} className="links">
+            <NavLink
+              exact
+              to={link.path}
+              activeClassName="active-link"
+            >
+              {link.text}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </nav>
 
   );
